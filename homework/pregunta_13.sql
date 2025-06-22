@@ -43,3 +43,22 @@
 -- 
 --  >>> Escriba su codigo a partir de este punto <<<
 --  
+SELECT 
+    K0,
+    CASE 
+        WHEN CAST((AVG(c12) * 1000) AS INT) % 10 = 5 THEN 
+            ROUND(AVG(c12) * 100 + 0.5) / 100.0
+        ELSE 
+            ROUND(AVG(c12), 2)
+    END AS "avg(c12)"
+FROM tbl1
+WHERE c13 > 400
+GROUP BY K0
+ORDER BY K0;
+
+
+
+
+
+
+
